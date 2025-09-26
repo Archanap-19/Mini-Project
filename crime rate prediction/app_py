@@ -63,3 +63,9 @@ if st.button("Predict Crime Rate"):
     st.write(f"📊 Crime Rate: **{round(crime_rate,2)} per lakh**")
     st.write(f"🚨 Estimated Cases: **{cases}**")
     st.success(f"Crime Status: **{crime_status}**")
+
+    # Tourist Risk Advice
+    if crime_status in ["High Crime Area", "Very High Crime Area"]:
+        st.warning("⚠️ Advice: Avoid travelling alone at night in this city. Stay alert in crowded areas.")
+    else:
+        st.info("✅ Safe for tourists. Usual precautions recommended.")

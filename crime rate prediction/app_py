@@ -60,7 +60,7 @@ if st.button("Predict Crime Rate"):
     st.write(f"⚖️ Crime Type: **{crime_type}**")
     st.write(f"📅 Year: **{year}**")
     st.write(f"👥 Population: **{round(pop,2)} Lakhs**")
-    st.write(f"📊 Crime Rate: **{round(crime_rate,2)} per lakh**")
+    st.write(f"📊 Crime Rate: {round(crime_rate,2)}")
     st.write(f"🚨 Estimated Cases: **{cases}**")
     st.success(f"Crime Status: **{crime_status}**")
 

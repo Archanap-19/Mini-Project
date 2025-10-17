@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register - Crime Rate Predictor</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<style>
+    body {
+      background-image: url('static/images/pic.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      min-height: 100vh;
+      font-family: 'Inter', sans-serif;
+    }
+  </style>
+
+<body class="flex flex-col items-center justify-center min-h-screen bg-teal-950">
+  <div class="bg-teal-800 p-8 rounded-xl shadow-md w-full max-w-md">
+    <h1 class="text-2xl text-white font-bold mb-6 text-center">REGISTER</h1>
+
+    {% if error %}
+      <p class="text-red-500 mb-4 text-center">{{ error }}</p>
+    {% endif %}
+    {% if success %}
+      <p class="text-green-600 mb-4 text-center">{{ success }}</p>
+    {% endif %}
+
+    <form method="POST" action="/register" class="space-y-4">
+      <div>
+        <label class="block font-medium">Username</label>
+        <input type="text" name="username" class="w-full p-2 border rounded-lg" required>
+      </div>
+      <div>
+        <label class="block font-medium">Password</label>
+        <input type="password" name="password" class="w-full p-2 border rounded-lg" required>
+      </div>
+      <button type="submit" class="w-full bg-green-600 text-white py-2 rounded-lg hover:bg-green-700">Register</button>
+    </form>
+
+    <p class="text-center mt-4 text-sm">
+      Already have an account?
+      <a href="{{ url_for('login') }}" class="text-white text-bold hover:underline font-mono">Login</a>
+    </p>
+  </div>
+</body>
+</html>
